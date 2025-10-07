@@ -1,30 +1,8 @@
 # --- TODO LISTA: DIABETESPREDICTOR-API ---
 
-# [FAZA 4: GRUNDSTRUKTUR & MODELL]
-# TODO: Import Flask, jsonify, request, joblib, pandas (gjort)
-# TODO: Initiera Flask-app (app = Flask(__name__))
-# TODO: Definiera sökvägen till 'best_diabetes_model.pkl'
-# TODO: Ladda modellen EN GÅNG vid start (joblib.load)
-# TODO: Lagra listan över de 8 features som modellen kräver (t.ex. REQUIRED_FEATURES)
-
-# [FAZA 4: VG-KRAV: SÄKERHET & SLUTPUNKTER]
-# TODO: Konfigurera Flask-JWT-Extended (app.config["JWT_SECRET_KEY"] och JWTManager)
-# TODO: Hårdkoda användaruppgifter för /auth/login (t.ex. USERS = {"kingen": "gud123"})
+# [FAZA 4: 
 # TODO: Skapa GET-slutpunkt /status (VG-Krav: Ytterligare en slutpunkt)
 # TODO: Skapa POST-slutpunkt /auth/login för att returnera JWT access token
-
-# [FAZA 4: HUVUD-ENDPOINT: /PREDICT]
-# TODO: Skydda /predict med dekoratören @jwt_required()
-# TODO: Hämta indata från anropet (request.get_json())
-# TODO: Validera att indata innehåller de 8 features i rätt format.
-# TODO: Konvertera indata till en Pandas DataFrame
-# TODO: Gör prediktionen (model.predict)
-# TODO: Beräkna sannolikheten (model.predict_proba)
-# TODO: Returnera prediktion och sannolikhet i ett snyggt JSON-format.
-
-# [FAZA 4: SLUTLIG EXEKVERING]
-# TODO: Lägg till startkod (__name__ == '__main__')
-# TODO: Kör applikationen (app.run(debug=True, port=8000))
 
 import joblib
 import pandas as pd
