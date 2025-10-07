@@ -1,0 +1,6 @@
+flask
+flask-jwt-extended
+numpy
+pandas
+scikit-learn
+joblib
