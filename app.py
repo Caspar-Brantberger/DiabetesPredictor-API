@@ -30,7 +30,7 @@ except FileNotFoundError:
     print(f"Error: The model file '{model_filename}' was not found.")
 
 @app.route('/predict', methods=['POST'])
-#@jwt_required()
+@jwt_required()
 def predict():
 
     if model is None:
@@ -74,11 +74,11 @@ def predict():
         return jsonify({"error": f"Prediction error: {str(e)}"}), 500
 
 
-    
-    
+@app.route('/status', methods=['GET'])
+@jwt_required()
+def status():
+    return jsonify({"status": "API is running"}), 200
 
-#@app.route('/status', methods=['GET'])
-#def status():
 
 @app.route('/auth/login', methods=['POST'])
 def login():
