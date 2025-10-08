@@ -1,9 +1,3 @@
-# --- TODO LISTA: DIABETESPREDICTOR-API ---
-
-# [FAZA 4: 
-# TODO: Skapa GET-slutpunkt /status (VG-Krav: Ytterligare en slutpunkt)
-# TODO: Skapa POST-slutpunkt /auth/login för att returnera JWT access token
-
 import joblib
 import pandas as pd
 import numpy as np
@@ -84,11 +78,11 @@ def status():
 def login():
     data = request.get_json(silent=True)
 
-    if data is None or not username or not password:
-        return jsonify({"error": "Missing username or password"}), 400
-    
     username = data.get("username", None)
     password = data.get("password", None)
+    
+    if data is None or not username or not password:
+        return jsonify({"error": "Missing username or password"}), 400
     
     if username not in USERS or USERS[username] != password:
         return jsonify({"error": "Bad username or password"}), 401
