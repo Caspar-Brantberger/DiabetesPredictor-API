@@ -83,11 +83,12 @@ def predict():
 @app.route('/auth/login', methods=['POST'])
 def login():
     data = request.get_json(silent=True)
-    username = data.get("username", None)
-    password = data.get("password", None)
 
     if data is None or not username or not password:
         return jsonify({"error": "Missing username or password"}), 400
+    
+    username = data.get("username", None)
+    password = data.get("password", None)
     
     if username not in USERS or USERS[username] != password:
         return jsonify({"error": "Bad username or password"}), 401
@@ -95,9 +96,6 @@ def login():
     if username in USERS and USERS[username] == password:
         access_token = create_access_token(identity=username)
         return jsonify(access_token=access_token), 200
-    else:
-        return jsonify({"error": "Bad username or password"}), 401
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
