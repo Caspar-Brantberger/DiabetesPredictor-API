@@ -24,7 +24,7 @@ except FileNotFoundError:
     print(f"Error: The model file '{model_filename}' was not found.")
 
 @app.route('/predict', methods=['POST'])
-@jwt_required()
+#@jwt_required()
 def predict():
 
     if model is None:
