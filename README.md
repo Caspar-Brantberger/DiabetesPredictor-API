@@ -1,0 +1,2 @@
+# DiabetesPredictor-API
+School project
